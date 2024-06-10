@@ -1,4 +1,13 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+:root {
+  --background-color: #FFF1F7; /*- если фон контента задавать не картинкой*/
+  --nav-color: var(--page-color);
+  --best-titlt-color: #FFC2E6;
+  --page-color: #353430;
+  --accent-color: #ff8dcb;
+  --title-without-accent-color: var(--page-color);
+  --text-with-accent-color: var(--page-color);
+  --background-img: url("../images/cover-image-light.png");
+  --page-padding: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);  /*10-20*/
+  --rec-visibility: hidden;
+  --button-hover: rgba(50, 49, 45, 0.4);
+}

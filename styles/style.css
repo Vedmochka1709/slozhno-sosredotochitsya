@@ -3,6 +3,11 @@
 .page {
   font-family: 'IBM Plex mono', monospace;
   font-weight: normal;  
+  background-color: var(--background-color); /*если картинка не загрузится*/
+  background-image: var(--background-img);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 h1,
@@ -11,20 +16,11 @@ h3 {
   font-weight: 700;
 }
 
-.page {
-  background-color: var(--background-color); /*если картинка не загрузится*/
-  background-image: var(--background-img);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
+
 /*Шапка*/
 .header {
   display: flex;
   flex-direction: column;
-  background-image: var(--background-img);
-  background-size: cover;
-  background-position: center;
   padding: var(--page-padding);
 }
 

@@ -3,7 +3,7 @@
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
-.page.theme-light { 
+.page.theme-light {
   --background-color: #FFF1F7; /*- если фон контента задавать не картинкой*/
   --nav-color: var(--page-color);
   --best-titlt-color: #FFC2E6;

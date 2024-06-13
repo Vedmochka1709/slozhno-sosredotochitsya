@@ -3,11 +3,11 @@
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
-.page.theme-light {
+.page.theme_light {
   --background-color: #FFF1F7; /*- если фон контента задавать не картинкой*/
+  --page-color: #353430;
   --nav-color: var(--page-color);
   --best-titlt-color: #FFC2E6;
-  --page-color: #353430;
   --accent-color: #ff8dcb;
   --title-without-accent-color: var(--page-color);
   --text-with-accent-color: var(--page-color);
@@ -20,9 +20,9 @@
 @media (prefers-color-scheme: light) {
   :root {
     --background-color: #FFF1F7; /*- если фон контента задавать не картинкой*/
+    --page-color: #353430;
     --nav-color: var(--page-color);
     --best-titlt-color: #FFC2E6;
-    --page-color: #353430;
     --accent-color: #ff8dcb;
     --title-without-accent-color: var(--page-color);
     --text-with-accent-color: var(--page-color);

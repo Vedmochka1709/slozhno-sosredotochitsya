@@ -3,26 +3,19 @@
 .page {
   font-family: 'IBM Plex mono', monospace;
   font-weight: normal;
-  background-color: var(--background-color); /*если картинка не загрузится*/
+  background-color: var(--background-color, #FFF1F7); /*если картинка не загрузится*/
   background-image: var(--background-img);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
-
-h1,
-h2,
-h3 {
-  font-weight: 700;
-}
-
-
 /*Шапка*/
 .header {
   display: flex;
   flex-direction: column;
   padding: var(--page-padding);
-  min-height: 100vh;
+  min-height: clamp(41.75rem, 20.5191rem + 90.5852vw, 64rem);/*668-1024*/
+  height: 100vh;
 }
 
 .decorated-zone {
@@ -41,15 +34,15 @@ h3 {
 .decorated-zone::before {
   inset-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); /*10-20*/
   inset-inline-end: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);  /*10-20*/
-  border-inline-end: 1px solid var(--nav-color);
-  border-block-start: 1px solid var(--nav-color);
+  border-inline-end: 1px solid var(--nav-color, #353430);
+  border-block-start: 1px solid var(--nav-color, #353430);
 }
 
 .decorated-zone::after {
   inset-block-end: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); /*10-20*/
   inset-inline-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);  /*10-20*/
-  border-inline-start: 1px solid var(--nav-color);
-  border-block-end: 1px solid var(--nav-color);
+  border-inline-start: 1px solid var(--nav-color, #353430);
+  border-block-end: 1px solid var(--nav-color, #353430);
 }
 
 .decor {
@@ -66,7 +59,7 @@ h3 {
   font-size: 18px;
   text-align: center;
   line-height: 139%;
-  color: var(--accent-color);
+  color: var(--accent-color, #ff8dcb);
 }
 
 .decor::after {
@@ -75,8 +68,8 @@ h3 {
   inline-size: 9px;
   block-size: 9px;
   border-radius: 100%;
-  background-color: var(--accent-color);
-  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--accent-color, #ff8dcb);
+  box-shadow: 0 0 4px 2px var(--accent-color, #ff8dcb);
 }
 
 .decor::before,
@@ -100,7 +93,7 @@ h3 {
 .header__theme-menu-button {
   font-family: 'IBM Plex mono', monospace;
   font-weight: normal;
-  color: var(--nav-color);
+  color: var(--nav-color, #353430);
   inline-size: 70px;
   block-size: 26px;
   text-align: center;
@@ -108,6 +101,7 @@ h3 {
   font-size: 18px;
   line-height: 100%;
   border: none;
+  border-block-end: 1px solid transparent;
   background-color: inherit;
   cursor: pointer;
 }
@@ -121,12 +115,12 @@ h3 {
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--nav-color);
+  border-block-end: 1px solid var(--nav-color, #353430);
 }
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  border: 1px solid var(--nav-color);
+  border: 1px solid var(--nav-color, #353430);
   cursor: default;
 }
 /*Конец декорации кнопок*/
@@ -134,13 +128,13 @@ h3 {
 .footer__title {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); /*116-120*/
   line-height: 83%;
-  color: var(--best-titlt-color);
+  color: var(--best-titlt-color, #FFC2E6);
 }
 
 .header__title {
   padding-block-start: clamp(4.0625rem, -2.3783rem + 27.4809vw, 10.8125rem); /*65-173*/
   padding-block-end: clamp(3.4375rem, -2.9437rem + 27.2265vw, 10.125rem); /*55-162*/
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 4px 4px 0 var(--accent-color, #ff8dcb);
 }
 
 .header__text {
@@ -157,14 +151,13 @@ h3 {
 }
 
 .title-decor {
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #ff8dcb);
 }
-
 /*Основной контент*/
 .content {
   padding: var(--page-padding);
-  background-color: var(--background-color);
-  color: var(--page-color);
+  background-color: var(--background-color, #FFF1F7);
+  color: var(--page-color, #353430);
 }
 
 .why {
@@ -178,14 +171,14 @@ h3 {
 }
 
 .page__first-title {
-  color: var(--title-without-accent-color);
+  color: var(--title-without-accent-color, #353430);
   margin-block-end: 20px;
   font-size: 18px;
   line-height: 130%;
 }
 
 .page__second-title {
-  color: var(--text-with-accent-color);
+  color: var(--text-with-accent-color, #353430);
   margin-block-start: 20px;
   font-size: 18px;
   line-height: 130%;
@@ -198,6 +191,7 @@ h3 {
 }
 
 .page__accent-text {
+  font-weight: normal;
   color: var(--text-with-accent-color);
   font-size: 18px;
   line-height: 130%;
@@ -206,11 +200,11 @@ h3 {
 
 .a {
   text-decoration: none;
-  text-shadow: 2px 1.5px 0 var(--accent-color);
+  text-shadow: 2px 1.5px 0 var(--accent-color, #ff8dcb);
 }
 
 .a:hover {
-  border-block-end: 1px solid var(--page-color);
+  border-block-end: 1px solid var(--page-color, #353430);
 }
 
 .a:focus {
@@ -218,7 +212,7 @@ h3 {
 }
 
 .a:focus-visible {
-  outline: 1px solid var(--page-color);
+  outline: 1px solid var(--page-color, #353430);
 }
 
 .picture {
@@ -229,16 +223,22 @@ h3 {
 }
 /*Подвал*/
 .footer {
+  min-height: clamp(41.75rem, 20.5191rem + 90.5852vw, 64rem);/*668-1024*/
+  height: 100vh;
   margin-block-start: clamp(1.875rem, 1.2786rem + 2.5445vw, 2.5rem); /*(40-10)-(60-20) от content*/
 }
 
 .footer__title {
   text-align: center;
   padding: clamp(17.875rem, 7.3192rem + 45.0382vw, 28.9375rem) 0; /*286-463*/
-  text-shadow: 2px 2px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--accent-color, #ff8dcb);
 }
 /*Медиазапросы под расширения*/
 @media (min-width: 768px) {
+  .header {
+    min-height: clamp(768px, calc(1024px - (100vw - 768px)), 1024px);/*1024-768*/
+  }
+
   .header__title {
     font-size: clamp(7.5rem, 0.6429rem + 14.2857vw, 9.8125rem); /*120-157*/
     padding-block-start: clamp(10.8125rem, -7.9375rem + 39.0625vw, 17.0625rem); /*173-273*/
@@ -253,7 +253,7 @@ h3 {
   .why {
     display: grid;
     grid-template-columns: clamp(16rem, 1.375rem + 30.4688vw, 20.875rem) /*256-334*/ 1fr;
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(2, auto);
   }
 
   .page__first-title {
@@ -261,7 +261,7 @@ h3 {
   }
 
   .why__first-title {
-    grid-row-start: span 4;
+    grid-row-start: span 999;
     padding-inline-end: 20px;
   }
 
@@ -276,11 +276,11 @@ h3 {
   .how {
     display: grid;
     grid-template-columns: clamp(16rem, 1.375rem + 30.4688vw, 20.875rem) /*256-334*/ 1fr;
-    grid-template-rows: repeat(11, auto);
+    grid-template-rows: repeat(6, auto);
   }
 
   .how__first-title {
-    grid-row-start: span 11;
+    grid-row-start: span 999;
     padding-inline-end: 20px;
   }
 
@@ -321,6 +321,10 @@ h3 {
     grid-column-start: span 2;
   }
 
+  .footer {
+    min-height: clamp(768px, calc(1024px - (100vw - 768px)), 1024px);/*1024-768*/
+  }
+
   .footer__title {
     font-size: clamp(7.5rem, 0.6429rem + 14.2857vw, 9.8125rem); /*120-157*/
     padding: clamp(319px, calc(463px - (100vw - 768px)), 463px) 0; /*463-319*/
@@ -345,14 +349,13 @@ h3 {
   .header__text {
     padding-inline-end: 0;
     word-spacing: 0;
-    margin-block-end: clamp(114px, calc(163px - (100vw - 768px)), 163px);; /*(183-20) - (134-20)*/
+    margin-block-end: clamp(114px, calc(163px - (100vw - 768px)), 163px); /*(183-20) - (134-20)*/
   }
 
   .what {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, auto);
-    grid-auto-flow: column;
+    grid-template-rows: repeat(2, auto);
     column-gap: 20px;
   }
 
@@ -360,15 +363,3 @@ h3 {
     grid-column-start: span 3;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-

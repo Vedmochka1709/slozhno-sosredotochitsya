@@ -64,7 +64,6 @@
 
 .decor::after {
   content: "";
-  display: var(--display-rec);
   inline-size: 9px;
   block-size: 9px;
   border-radius: 100%;
